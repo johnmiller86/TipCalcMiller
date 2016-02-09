@@ -71,7 +71,8 @@
     <TableRow
         android:id="@+id/tableRow2"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/tipTextView"
@@ -123,7 +124,8 @@
     <TableRow
         android:id="@+id/tableRow3"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/totalTextView"
@@ -175,7 +177,8 @@
     <TableRow
         android:id="@+id/tableRow4"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:paddingTop="15dp">
 
         <TextView
             android:id="@+id/customTextView"
@@ -205,7 +208,8 @@
     <TableRow
         android:id="@+id/tableRow5"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/tipAmountTextView"
