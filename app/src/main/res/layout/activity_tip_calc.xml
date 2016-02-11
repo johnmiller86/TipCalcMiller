@@ -63,6 +63,7 @@
             android:layout_height="wrap_content"
             android:text="@string/twenty_percent"
             android:textColor="#000"
+            android:layout_gravity="center"
             android:layout_weight="1"/>
     </TableRow>
 
