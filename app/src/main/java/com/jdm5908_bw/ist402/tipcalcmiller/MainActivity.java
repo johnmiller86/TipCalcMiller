@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity{
     /**'
      * Listener for the bill EditText.
      */
-    private TextWatcher textWatcher = new TextWatcher() {
+    private final TextWatcher textWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity{
     };
 
     /**
-     * Listener for the seekbar.
+     * Listener for the SeekBar.
      */
-    private SeekBar.OnSeekBarChangeListener seekBarListener = new SeekBar.OnSeekBarChangeListener(){
+    private final SeekBar.OnSeekBarChangeListener seekBarListener = new SeekBar.OnSeekBarChangeListener(){
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
             percentageTextView.setText(String.valueOf(progress) + "%");
@@ -109,13 +109,13 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void clearUI(){
-        tip10EditText.setText("");
-        tip15EditText.setText("");
-        tip20EditText.setText("");
-        total10EditText.setText("");
-        total15EditText.setText("");
-        total20EditText.setText("");
-        tipAmountEditText.setText("");
-        totalAmountEditText.setText("");
+        tip10EditText.setText(R.string.zero);
+        tip15EditText.setText(R.string.zero);
+        tip20EditText.setText(R.string.zero);
+        total10EditText.setText(R.string.zero);
+        total15EditText.setText(R.string.zero);
+        total20EditText.setText(R.string.zero);
+        tipAmountEditText.setText(R.string.zero);
+        totalAmountEditText.setText(R.string.zero);
     }
 }
