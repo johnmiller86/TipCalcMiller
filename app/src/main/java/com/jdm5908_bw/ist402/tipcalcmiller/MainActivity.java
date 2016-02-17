@@ -36,11 +36,22 @@ public class MainActivity extends AppCompatActivity{
         if(savedInstanceState != null){
             billEditText.setText(savedInstanceState.getString(BILL_TOTAL));
             percentageSeekBar.setProgress(savedInstanceState.getInt(CUSTOM_PERCENT));
+            performCalculations();
         }
 
         // Adding listeners
         billEditText.addTextChangedListener(textWatcher);
         percentageSeekBar.setOnSeekBarChangeListener(seekBarListener);
+    }
+
+    // Saving Bundle
+    @Override
+    protected void onSaveInstanceState(Bundle outState)
+    {
+        super.onSaveInstanceState(outState);
+
+        outState.putString(BILL_TOTAL, billEditText.getText().toString());
+        outState.putInt(CUSTOM_PERCENT, percentageSeekBar.getProgress());
     }
 
     /**
