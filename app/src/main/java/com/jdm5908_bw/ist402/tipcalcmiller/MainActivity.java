@@ -12,24 +12,40 @@ import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity{
 
+    // Bundle Constants
+    private static final String BILL_TOTAL = "BILL_TOTAL";
+    private static final String CUSTOM_PERCENT = "CUSTOM_PERCENT";
+
     // UI Objects
     private SeekBar percentageSeekBar;
     private EditText billEditText, tip10EditText, tip15EditText, tip20EditText, total10EditText, total15EditText, total20EditText, tipAmountEditText, totalAmountEditText;
     private TextView percentageTextView;
 
     // Formatter
-    //private final NumberFormat numberFormat = new DecimalFormat("$#.##");
     private final NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tip_calc);
+
+        // Setting UI references
         setUIReferences();
+
+        // Resuming
+        if(savedInstanceState != null){
+            billEditText.setText(savedInstanceState.getString(BILL_TOTAL));
+            percentageSeekBar.setProgress(savedInstanceState.getInt(CUSTOM_PERCENT));
+        }
+
+        // Adding listeners
         billEditText.addTextChangedListener(textWatcher);
         percentageSeekBar.setOnSeekBarChangeListener(seekBarListener);
     }
 
+    /**
+     * Sets all references for UI objects.
+     */
     private void setUIReferences() {
         billEditText = (EditText) findViewById(R.id.billEditText);
         tip10EditText = (EditText) findViewById(R.id.tip10EditText);
